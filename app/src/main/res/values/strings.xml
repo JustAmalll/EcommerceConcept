@@ -1,3 +1,59 @@
 <resources>
     <string name="app_name">EcommerceConcept</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_category">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="filter_icon">Filter Icon</string>
+    <string name="address">Zihuatanejo, Gro</string>
+    <string name="phone_icon">Phone Icon</string>
+    <string name="phones">Phones</string>
+    <string name="computer_icon">Computer Icon</string>
+    <string name="computer">Computer</string>
+    <string name="health">Health</string>
+    <string name="books">Books</string>
+    <string name="health_icon">Health Icon</string>
+    <string name="books_icon">Books Icon</string>
+    <string name="search">Search</string>
+    <string name="qr_code_icon">Qr Code Icon</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="heart_icon">Heart Icon</string>
+    <string name="explorer">Explorer</string>
+    <string name="bag_icon">Bag Icon</string>
+    <string name="user_icon">User Icon</string>
+    <string name="close_icon">Close Icon</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="filter_bottom_sheet_default_brand">Samsung</string>
+    <string name="price">Price</string>
+    <string name="ellipse_icon">Ellipse Icon</string>
+    <string name="filter_bottom_sheet_default_size">4.5 to 5.5 inches</string>
+    <string name="filter_bottom_sheet_default_price">$300 - $500</string>
+    <string name="best_seller_item_default_brand">Xiaomi Mi 10 Pro</string>
+    <string name="best_seller_item_default_old_price">$400</string>
+    <string name="best_seller_item_default_new_price">$300</string>
+    <string name="phone_preview">Phone Preview</string>
+
+    <string-array name="brands">
+        <item>Samsung</item>
+        <item>Apple</item>
+        <item>Xiaomi</item>
+    </string-array>
+
+    <string-array name="price">
+        <item>$300 - $500</item>
+        <item>$500 - $700</item>
+        <item>$700 - $900</item>
+        <item>$900 - $1100</item>
+    </string-array>
+
+    <string-array name="size">
+        <item>4.5 to 5.5 inches</item>
+        <item>5.5 to 6.5 inches</item>
+        <item>6.5 to 7.5 inches</item>
+    </string-array>
+
 </resources>
