@@ -1,25 +1,30 @@
-package dev.amal.ecommerceconcept
+package dev.amal.ecommerceconcept.fragments.home_store_fragment
 
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import androidx.cardview.widget.CardView
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import dagger.hilt.android.AndroidEntryPoint
+import dev.amal.ecommerceconcept.R
 import dev.amal.ecommerceconcept.adapters.BestSellerAdapter
-import dev.amal.ecommerceconcept.databinding.FragmentMainBinding
+import dev.amal.ecommerceconcept.common.BaseFragment
+import dev.amal.ecommerceconcept.databinding.FragmentHomeStoreBinding
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-class MainFragment : BaseFragment<FragmentMainBinding>(
-    FragmentMainBinding::inflate
+@AndroidEntryPoint
+class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
+    FragmentHomeStoreBinding::inflate
 ) {
 
     private lateinit var dialog: BottomSheetDialog
+    private val viewModel by viewModels<HomeStoreViewModel>()
 
     override fun setupClickListener() = with(binding) {
-        bestSellerRecyclerView.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = BestSellerAdapter()
-        }
         filterIcon.setOnClickListener {
             showFilterBottomSheet()
         }
@@ -34,6 +39,21 @@ class MainFragment : BaseFragment<FragmentMainBinding>(
         }
         booksLinearLayout.setOnClickListener {
 
+        }
+    }
+
+    override fun onCreateView() {
+        super.onCreateView()
+
+        lifecycleScope.launch {
+            viewModel.stateFlow.collectLatest {
+                it.allItems?.let { allItems ->
+                    binding.bestSellerRecyclerView.apply {
+                        layoutManager = GridLayoutManager(requireContext(), 2)
+                        adapter = BestSellerAdapter(allItems.best_seller, requireContext())
+                    }
+                }
+            }
         }
     }
 

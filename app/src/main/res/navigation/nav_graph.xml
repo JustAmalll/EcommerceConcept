@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="dev.amal.ecommerceconcept.MainFragment"
+        android:name="dev.amal.ecommerceconcept.fragments.home_store_fragment.HomeStoreFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_home_store" />
 
 </navigation>

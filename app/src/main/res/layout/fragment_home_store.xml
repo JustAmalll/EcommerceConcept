@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".MainFragment">
+    tools:context=".fragments.home_store_fragment.HomeStoreFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -369,7 +369,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="22dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginBottom="74dp"
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -431,7 +431,7 @@
                 android:layout_height="18dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/heart_icon"
-                android:src="@drawable/ic_heart"
+                android:src="@drawable/ic_heart_outline"
                 app:tint="@color/white" />
 
             <ImageView

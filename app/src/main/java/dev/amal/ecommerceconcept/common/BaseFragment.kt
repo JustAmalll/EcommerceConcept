@@ -1,4 +1,4 @@
-package dev.amal.ecommerceconcept
+package dev.amal.ecommerceconcept.common
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,11 +24,13 @@ abstract class BaseFragment<VB : ViewBinding>(
         _binding = inflate.invoke(inflater, container, false)
 
         setupClickListener()
+        onCreateView()
 
         return binding.root
     }
 
     open fun setupClickListener() {}
+    open fun onCreateView() {}
 
     override fun onDestroyView() {
         super.onDestroyView()
