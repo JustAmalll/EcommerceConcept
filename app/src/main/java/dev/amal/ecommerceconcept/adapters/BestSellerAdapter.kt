@@ -4,11 +4,11 @@ import android.content.Context
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import dev.amal.ecommerceconcept.R
+import dev.amal.ecommerceconcept.common.setImageDrawable
 import dev.amal.ecommerceconcept.databinding.BestSellerItemBinding
 import dev.amal.ecommerceconcept.domain.model.BestSeller
 
@@ -44,15 +44,10 @@ class BestSellerAdapter(
                 .load(bestSeller.picture)
                 .into(phonePreviewImageView)
 
-            if (bestSeller.isFavorites) {
-                heartIcon.setImageDrawable(
-                    ContextCompat.getDrawable(context, R.drawable.ic_heart_filled)
-                )
-            } else {
-                heartIcon.setImageDrawable(
-                    ContextCompat.getDrawable(context, R.drawable.ic_heart_outline)
-                )
-            }
+            if (bestSeller.isFavorites) heartIcon.setImageDrawable(
+                context, R.drawable.ic_heart_filled
+            )
+            else heartIcon.setImageDrawable(context, R.drawable.ic_heart_outline)
         }
     }
 

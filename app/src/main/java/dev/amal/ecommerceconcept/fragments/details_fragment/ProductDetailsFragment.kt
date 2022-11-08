@@ -2,6 +2,7 @@ package dev.amal.ecommerceconcept.fragments.details_fragment
 
 import android.annotation.SuppressLint
 import android.view.View
+import androidx.core.graphics.toColorInt
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -33,34 +34,28 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>(
 
                 it.item?.let { item ->
                     val productDetailsViewPagerAdapter = ProductDetailsViewPagerAdapter(
-                        images = item.images,
-                        context = requireContext()
+                        images = item.images, context = requireContext()
                     )
-                    binding.phonePreviewViewPager.adapter = productDetailsViewPagerAdapter
 
+                    binding.phonePreviewViewPager.adapter = productDetailsViewPagerAdapter
                     binding.brandTextView.text = item.title
-                    if (item.isFavorites) {
-                        binding.heartIcon.setImageDrawable(
-                            requireContext(), R.drawable.ic_heart_filled
-                        )
-                    } else {
-                        binding.heartIcon.setImageDrawable(
-                            requireContext(), R.drawable.ic_heart_outline
-                        )
-                    }
+
+                    if (item.isFavorites) binding.heartIcon.setImageDrawable(
+                        requireContext(), R.drawable.ic_heart_filled
+                    )
+                    else binding.heartIcon.setImageDrawable(
+                        requireContext(), R.drawable.ic_heart_outline
+                    )
 
                     setViewPagerAdapter(item)
 
-//                    binding.firstColorCardView.setCardBgColor(item.color.toString())
-//                    binding.secondColorCardView.setCardBgColor(item.color[1].toInt())
+                    binding.firstColorCardView.setCardBackgroundColor(item.color[0].toColorInt())
+                    binding.secondColorCardView.setCardBackgroundColor(item.color[1].toColorInt())
 
-//                    item.capacity.map { capacity ->
-//                        binding.firstCapacityTextView.text = capacity
-//                        binding.secondCapacityTextView.text = capacity
-//                    }
+                    binding.firstCapacityTextView.text = "${item.capacity[0]} gb"
+                    binding.secondCapacityTextView.text = "${item.capacity[1]} gb"
 
                     binding.priceTextView.text = "$${item.price}.00"
-
                 }
             }
         }
@@ -112,21 +107,15 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>(
             }
         }.attach()
 
-        binding.tabLayout.changeSelectedTabItemFontFamily(
-            0, R.font.mark_pro_bold
-        )
+        binding.tabLayout.changeSelectedTabItemFontFamily(0, true)
 
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                binding.tabLayout.changeSelectedTabItemFontFamily(
-                    tab.position, R.font.mark_pro_bold
-                )
+                binding.tabLayout.changeSelectedTabItemFontFamily(tab.position, true)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
-                binding.tabLayout.changeSelectedTabItemFontFamily(
-                    tab.position, R.font.mark_pro_normal
-                )
+                binding.tabLayout.changeSelectedTabItemFontFamily(tab.position, false)
             }
 
             override fun onTabReselected(tab: TabLayout.Tab) {}

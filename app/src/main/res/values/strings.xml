@@ -51,6 +51,8 @@
     <string name="trash_icon">Trash Icon</string>
     <string name="plus_icon">Plus Icon</string>
     <string name="minus_icon">Minus Icon</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="app_logo">App Logo</string>
 
     <string-array name="brands">
         <item>Samsung</item>

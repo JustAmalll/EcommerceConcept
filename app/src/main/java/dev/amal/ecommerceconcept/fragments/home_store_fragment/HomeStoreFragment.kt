@@ -14,6 +14,7 @@ import dev.amal.ecommerceconcept.R
 import dev.amal.ecommerceconcept.adapters.BestSellerAdapter
 import dev.amal.ecommerceconcept.adapters.HotSalesViewPagerAdapter
 import dev.amal.ecommerceconcept.common.BaseFragment
+import dev.amal.ecommerceconcept.common.setLightSystemBars
 import dev.amal.ecommerceconcept.common.showProgressBarWhenLoading
 import dev.amal.ecommerceconcept.databinding.FragmentHomeStoreBinding
 import kotlinx.coroutines.flow.collectLatest
@@ -28,8 +29,9 @@ class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
     private val viewModel by viewModels<HomeStoreViewModel>()
 
     override fun setupClickListener() = with(binding) {
-        filterIcon.setOnClickListener {
-            showFilterBottomSheet()
+        filterIcon.setOnClickListener { showFilterBottomSheet() }
+        bagIcon.setOnClickListener {
+            findNavController().navigate(R.id.action_homeStoreFragment_to_basketFragment)
         }
         phonesLinearLayout.setOnClickListener {
 
@@ -46,7 +48,7 @@ class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
     }
 
     override fun onCreateView() {
-        super.onCreateView()
+        activity?.window?.setLightSystemBars(requireContext())
 
         lifecycleScope.launch {
             viewModel.stateFlow.collectLatest {

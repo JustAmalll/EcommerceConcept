@@ -442,6 +442,7 @@
                 android:textSize="15sp" />
 
             <ImageView
+                android:id="@+id/bagIcon"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -449,6 +450,7 @@
                 android:src="@drawable/ic_bag" />
 
             <ImageView
+                android:id="@+id/favoritesIcon"
                 android:layout_width="0dp"
                 android:layout_height="18dp"
                 android:layout_weight="1"
@@ -457,6 +459,7 @@
                 app:tint="@color/white" />
 
             <ImageView
+                android:id="@+id/userIcon"
                 android:layout_width="0dp"
                 android:layout_height="18dp"
                 android:layout_weight="1"
