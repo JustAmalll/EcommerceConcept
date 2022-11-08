@@ -36,6 +36,21 @@
     <string name="best_seller_item_default_old_price">$400</string>
     <string name="best_seller_item_default_new_price">$300</string>
     <string name="phone_preview">Phone Preview</string>
+    <string name="arrow_left_icon">Arrow Left Icon</string>
+    <string name="product_details">Product Details</string>
+    <string name="check_icon">Check Icon</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="new_text">New</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="add_address">Add address</string>
+    <string name="location_icon">Location Icon</string>
+    <string name="my_cart">My Cart</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="checkout">Checkout</string>
+    <string name="trash_icon">Trash Icon</string>
+    <string name="plus_icon">Plus Icon</string>
+    <string name="minus_icon">Minus Icon</string>
 
     <string-array name="brands">
         <item>Samsung</item>

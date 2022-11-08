@@ -6,12 +6,15 @@ import android.widget.Button
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 import dev.amal.ecommerceconcept.R
 import dev.amal.ecommerceconcept.adapters.BestSellerAdapter
+import dev.amal.ecommerceconcept.adapters.HotSalesViewPagerAdapter
 import dev.amal.ecommerceconcept.common.BaseFragment
+import dev.amal.ecommerceconcept.common.showProgressBarWhenLoading
 import dev.amal.ecommerceconcept.databinding.FragmentHomeStoreBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -47,10 +50,21 @@ class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
 
         lifecycleScope.launch {
             viewModel.stateFlow.collectLatest {
-                it.allItems?.let { allItems ->
+                binding.hotSalesProgressBar.showProgressBarWhenLoading(it.isLoading)
+                binding.bestSellerProgressBar.showProgressBarWhenLoading(it.isLoading)
+
+                it.allProducts?.let { allItems ->
+                    val hotSalesViewPagerAdapter = HotSalesViewPagerAdapter(
+                        hotSales = allItems.homeStore,
+                        context = requireContext()
+                    )
+                    binding.hotSalesViewPager.adapter = hotSalesViewPagerAdapter
+
                     binding.bestSellerRecyclerView.apply {
                         layoutManager = GridLayoutManager(requireContext(), 2)
-                        adapter = BestSellerAdapter(allItems.best_seller, requireContext())
+                        adapter = BestSellerAdapter(
+                            allItems.bestSeller, requireContext(), findNavController()
+                        )
                     }
                 }
             }

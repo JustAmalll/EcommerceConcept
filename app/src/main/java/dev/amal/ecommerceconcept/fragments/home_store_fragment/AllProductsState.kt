@@ -1,9 +1,9 @@
 package dev.amal.ecommerceconcept.fragments.home_store_fragment
 
-import dev.amal.ecommerceconcept.data.remote.dto.AllItems
+import dev.amal.ecommerceconcept.domain.model.AllProducts
 
-data class AllItemsState(
+data class AllProductsState(
     val isLoading: Boolean = false,
-    val allItems: AllItems? = null,
+    val allProducts: AllProducts? = null,
     val error: String = ""
 )

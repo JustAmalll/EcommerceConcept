@@ -4,16 +4,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.amal.ecommerceconcept.common.Resource
-import dev.amal.ecommerceconcept.domain.use_cases.GetBestSellersUseCase
+import dev.amal.ecommerceconcept.domain.use_cases.GetAllProductsUseCase
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeStoreViewModel @Inject constructor(
-    private val getBestSellersUseCase: GetBestSellersUseCase
+    private val getAllProductsUseCase: GetAllProductsUseCase
 ) : ViewModel() {
 
-    private val _stateFlow = MutableStateFlow(AllItemsState())
+    private val _stateFlow = MutableStateFlow(AllProductsState())
     val stateFlow = _stateFlow.asStateFlow()
 
     init {
@@ -21,18 +21,18 @@ class HomeStoreViewModel @Inject constructor(
     }
 
     private fun getAllItems() {
-        getBestSellersUseCase().onEach { result ->
+        getAllProductsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    _stateFlow.value = AllItemsState(allItems = result.data)
+                    _stateFlow.value = AllProductsState(allProducts = result.data)
                 }
                 is Resource.Error -> {
-                    _stateFlow.value = AllItemsState(
+                    _stateFlow.value = AllProductsState(
                         error = result.message ?: "An unexpected error occurred"
                     )
                 }
                 is Resource.Loading -> {
-                    _stateFlow.value = AllItemsState(isLoading = true)
+                    _stateFlow.value = AllProductsState(isLoading = true)
                 }
             }
         }.launchIn(viewModelScope)

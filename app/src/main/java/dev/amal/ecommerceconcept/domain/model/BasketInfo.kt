@@ -1,4 +1,4 @@
-package dev.amal.ecommerceconcept.data.remote.dto
+package dev.amal.ecommerceconcept.domain.model
 
 data class BasketInfo(
     val id: Int,

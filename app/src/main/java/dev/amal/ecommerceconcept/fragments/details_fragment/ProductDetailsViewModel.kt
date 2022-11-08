@@ -4,13 +4,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.amal.ecommerceconcept.common.Resource
-import dev.amal.ecommerceconcept.domain.use_cases.GetItemDetailsUseCase
+import dev.amal.ecommerceconcept.domain.use_cases.GetProductDetailsUseCase
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
-class ItemDetailsViewModel @Inject constructor(
-    private val getItemDetailsUseCase: GetItemDetailsUseCase
+class ProductDetailsViewModel @Inject constructor(
+    private val getProductDetailsUseCase: GetProductDetailsUseCase
 ): ViewModel() {
 
     private val _stateFlow = MutableStateFlow(ItemDetailState())
@@ -21,7 +21,7 @@ class ItemDetailsViewModel @Inject constructor(
     }
 
     private fun getItemDetails() {
-        getItemDetailsUseCase().onEach { result ->
+        getProductDetailsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {
                     _stateFlow.value = ItemDetailState(item = result.data)

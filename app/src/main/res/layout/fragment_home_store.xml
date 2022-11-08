@@ -319,19 +319,27 @@
 
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/hotSalesCardView"
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/hotSalesViewPager"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="14dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp"
+                android:layout_height="wrap_content"
+                android:minHeight="180dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hotSalesLinearLayout">
+                app:layout_constraintTop_toBottomOf="@+id/hotSalesLinearLayout" />
 
-            </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/hotSalesProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/primary"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/hotSalesViewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hotSalesLinearLayout"
+                tools:visibility="visible" />
 
             <LinearLayout
                 android:id="@+id/bestSellerLinearLayout"
@@ -343,7 +351,7 @@
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hotSalesCardView">
+                app:layout_constraintTop_toBottomOf="@+id/hotSalesViewPager">
 
                 <TextView
                     android:layout_width="0dp"
@@ -370,6 +378,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="22dp"
                 android:layout_marginBottom="74dp"
+                android:minHeight="180dp"
                 android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -379,6 +388,19 @@
                 app:spanCount="2"
                 tools:itemCount="2"
                 tools:listitem="@layout/best_seller_item" />
+
+            <ProgressBar
+                android:id="@+id/bestSellerProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/primary"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/bestSellerRecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bestSellerRecyclerView"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -404,18 +426,18 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_ellipse"
-                android:contentDescription="@string/ellipse_icon" />
+                android:contentDescription="@string/ellipse_icon"
+                android:src="@drawable/ic_ellipse" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
+                android:layout_marginBottom="2dp"
                 android:layout_weight="2"
+                android:fontFamily="@font/mark_pro_bold"
                 android:gravity="center|start"
                 android:text="@string/explorer"
-                android:layout_marginBottom="2dp"
-                android:fontFamily="@font/mark_pro_bold"
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 

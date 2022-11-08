@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hotSalesViewPager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="14dp"
+    android:maxHeight="200dp"
+    app:cardElevation="0dp"
+    android:layout_marginHorizontal="16dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/hotSalesImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/phone_preview"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/newCardView"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="24dp"
+            app:cardBackgroundColor="@color/primary"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/new_text"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/newCardView"
+            app:layout_constraintTop_toBottomOf="@+id/newCardView"
+            tools:text="Iphone 12" />
+
+        <TextView
+            android:id="@+id/subTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            tools:text="Súper. Mega. Rápido." />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buyNowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/buy_now"
+            android:layout_marginTop="16dp"
+            android:textAllCaps="false"
+            android:textColor="@color/secondary"
+            app:cornerRadius="6dp"
+            android:paddingHorizontal="32dp"
+            app:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/subTitleTextView"
+            app:layout_constraintTop_toBottomOf="@+id/subTitleTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

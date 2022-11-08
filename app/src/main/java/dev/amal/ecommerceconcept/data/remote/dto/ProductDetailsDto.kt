@@ -2,7 +2,7 @@ package dev.amal.ecommerceconcept.data.remote.dto
 
 import dev.amal.ecommerceconcept.domain.model.ItemDetails
 
-data class ItemDetailsDto(
+data class ProductDetailsDto(
     val CPU: String,
     val camera: String,
     val capacity: List<String>,
@@ -17,8 +17,9 @@ data class ItemDetailsDto(
     val title: String
 )
 
-fun ItemDetailsDto.toItemDetails(): ItemDetails = ItemDetails(
-    CPU, camera,
+fun ProductDetailsDto.toProductDetails(): ItemDetails = ItemDetails(
+    CPU = CPU,
+    camera = camera,
     capacity = capacity,
     color = color,
     id = id,
