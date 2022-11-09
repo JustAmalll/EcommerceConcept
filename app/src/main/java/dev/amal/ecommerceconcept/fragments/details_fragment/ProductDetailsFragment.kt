@@ -31,6 +31,14 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>(
         lifecycleScope.launch {
             viewModel.stateFlow.collectLatest {
                 binding.productDetailsProgressBar.showProgressBarWhenLoading(it.isLoading)
+                if (it.isLoading) {
+                    binding.ratingBar.visibility = View.INVISIBLE
+                    binding.detailsLinearLayout.visibility = View.INVISIBLE
+                }
+                else {
+                    binding.ratingBar.visibility = View.VISIBLE
+                    binding.detailsLinearLayout.visibility = View.VISIBLE
+                }
 
                 it.item?.let { item ->
                     val productDetailsViewPagerAdapter = ProductDetailsViewPagerAdapter(
