@@ -101,9 +101,9 @@ class ProductDetailsFragment : BaseFragment<FragmentProductDetailsBinding>(
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
-                0 -> tab.text = "Shop"
-                1 -> tab.text = "Details"
-                2 -> tab.text = "Features"
+                0 -> tab.text = requireContext().getText(R.string.shop)
+                1 -> tab.text = requireContext().getText(R.string.details)
+                2 -> tab.text = requireContext().getText(R.string.features)
             }
         }.attach()
 

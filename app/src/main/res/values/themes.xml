@@ -11,10 +11,10 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/surface</item>
-        <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="android:navigationBarColor">@color/surface</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <!-- Customize your theme here. -->
     </style>
 
     <style name="SplashFragmentTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -22,6 +22,28 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
         <item name="android:navigationBarColor">@color/secondary</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">false</item>
+    </style>
+
+    <style name="SelectCategoryTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:fontFamily">@font/mark_pro_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <style name="ToggleButtonTheme">
+        <item name="layout_flexGrow">1</item>
+        <item name="toggle_selectedBackgroundColor">@color/primary</item>
+        <item name="toggle_backgroundColor">@color/white</item>
+        <item name="toggle_iconColor">#B3B3C3</item>
+        <item name="toggle_iconPadding">22dp</item>
+        <item name="toggle_btnCornerRadius">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="toggle_textSize">0dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -74,6 +96,5 @@
     <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
     </style>
-
 
 </resources>

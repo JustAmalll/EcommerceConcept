@@ -84,159 +84,72 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/selectCategoryLinearLayout"
+            <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+                android:id="@+id/toggleButtonGroup"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:baselineAligned="true"
+                android:layout_height="80dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginTop="22dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/categoryLinearLayout">
+                app:layout_constraintTop_toBottomOf="@+id/categoryLinearLayout"
+                app:toggle_requiredAmount="1">
 
-                <LinearLayout
-                    android:id="@+id/phonesLinearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/phoneButton"
+                    style="@style/ToggleButtonTheme"
+                    app:toggle_icon="@drawable/ic_phone"
+                    app:toggle_text="phoneButton" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/phoneCardView"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="@color/primary"
-                        app:cardCornerRadius="72dp">
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/computerButton"
+                    style="@style/ToggleButtonTheme"
+                    app:toggle_icon="@drawable/ic_computer"
+                    app:toggle_text="computerButton" />
 
-                        <ImageView
-                            android:id="@+id/phoneIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/phone_icon"
-                            android:src="@drawable/ic_phone" />
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/healthButton"
+                    style="@style/ToggleButtonTheme"
+                    app:toggle_icon="@drawable/ic_health"
+                    app:toggle_text="healthButton" />
 
-                    </androidx.cardview.widget.CardView>
+                <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+                    android:id="@+id/booksButton"
+                    style="@style/ToggleButtonTheme"
+                    app:toggle_icon="@drawable/ic_books"
+                    app:toggle_text="booksButton" />
 
-                    <TextView
-                        android:id="@+id/phoneTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/mark_pro_medium"
-                        android:text="@string/phones"
-                        android:textColor="@color/primary" />
+            </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
 
-                </LinearLayout>
+            <LinearLayout
+                android:id="@+id/categoryTextsLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toggleButtonGroup">
 
-                <LinearLayout
-                    android:id="@+id/computerLinearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                <TextView
+                    android:id="@+id/phoneTV"
+                    style="@style/SelectCategoryTextView"
+                    android:text="@string/phones"
+                    android:textColor="@color/primary" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/computerCardView"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="@color/white"
-                        app:cardCornerRadius="72dp">
+                <TextView
+                    android:id="@+id/computerTV"
+                    style="@style/SelectCategoryTextView"
+                    android:text="@string/computer" />
 
-                        <ImageView
-                            android:id="@+id/computerIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/computer_icon"
-                            android:src="@drawable/ic_computer" />
+                <TextView
+                    android:id="@+id/healthTV"
+                    style="@style/SelectCategoryTextView"
+                    android:text="@string/health" />
 
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/computerTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/mark_pro_medium"
-                        android:text="@string/computer"
-                        android:textColor="@color/secondary" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/healthLinearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/healthCardView"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="@color/white"
-                        app:cardCornerRadius="72dp">
-
-                        <ImageView
-                            android:id="@+id/healthIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/health_icon"
-                            android:src="@drawable/ic_health" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/healthTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/mark_pro_medium"
-                        android:text="@string/health"
-                        android:textColor="@color/secondary" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/booksLinearLayout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/booksCardView"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        app:cardBackgroundColor="@color/white"
-                        app:cardCornerRadius="72dp">
-
-                        <ImageView
-                            android:id="@+id/bootsIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:contentDescription="@string/books_icon"
-                            android:src="@drawable/ic_books" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/booksTextView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/mark_pro_medium"
-                        android:text="@string/books"
-                        android:textColor="@color/secondary" />
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/booksTV"
+                    style="@style/SelectCategoryTextView"
+                    android:text="@string/books" />
 
             </LinearLayout>
 
@@ -250,7 +163,7 @@
                 android:layout_marginEnd="10dp"
                 app:layout_constraintEnd_toStartOf="@+id/qrCodeCardView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/selectCategoryLinearLayout">
+                app:layout_constraintTop_toBottomOf="@+id/categoryTextsLinearLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -338,8 +251,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/hotSalesViewPager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hotSalesLinearLayout"
-                tools:visibility="visible" />
+                app:layout_constraintTop_toBottomOf="@+id/hotSalesLinearLayout" />
 
             <LinearLayout
                 android:id="@+id/bestSellerLinearLayout"
@@ -399,17 +311,18 @@
                 app:layout_constraintBottom_toBottomOf="@+id/bestSellerRecyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/bestSellerRecyclerView"
-                tools:visibility="visible" />
+                app:layout_constraintTop_toTopOf="@+id/bestSellerRecyclerView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
+        android:focusable="false"
         app:cardBackgroundColor="@color/secondary"
         app:cardCornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -421,7 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="62dp"
             android:gravity="center"
-            android:paddingVertical="26dp">
+            android:paddingVertical="18dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -441,13 +354,47 @@
                 android:textColor="@color/white"
                 android:textSize="15sp" />
 
-            <ImageView
-                android:id="@+id/bagIcon"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:contentDescription="@string/bag_icon"
-                android:src="@drawable/ic_bag" />
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardItemCountCardView"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    app:cardBackgroundColor="@color/primary"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/bagIcon"
+                    app:layout_constraintEnd_toEndOf="@+id/bagIcon"
+                    app:layout_constraintStart_toEndOf="@+id/bagIcon"
+                    app:layout_constraintTop_toTopOf="@+id/bagIcon">
+
+                    <TextView
+                        android:id="@+id/cartItemCountTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="1dp"
+                        android:fontFamily="@font/mark_pro_normal"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        tools:text="2" />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/bagIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/bag_icon"
+                    android:src="@drawable/ic_bag"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/favoritesIcon"
@@ -472,4 +419,3 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

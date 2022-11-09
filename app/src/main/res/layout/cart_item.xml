@@ -7,7 +7,7 @@
     tools:background="@color/secondary">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/phonePreviewCardView"
         android:layout_width="86dp"
         android:layout_height="86dp"
         android:layout_marginTop="30dp"
@@ -34,8 +34,8 @@
         android:lineSpacingExtra="4dp"
         android:textColor="@color/white"
         android:textSize="19sp"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/phonePreviewCardView"
+        app:layout_constraintTop_toTopOf="@+id/phonePreviewCardView"
         tools:text="Galaxy Note 20 Ultra" />
 
     <TextView
@@ -51,10 +51,10 @@
         tools:text="$3000.00" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        android:id="@+id/itemCountCardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#282843"
+        app:cardBackgroundColor="@color/item_count_card_view_color"
         app:cardCornerRadius="26dp"
         app:layout_constraintBottom_toBottomOf="@+id/priceTextView"
         app:layout_constraintStart_toEndOf="@+id/brandTextView"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
                 android:fontFamily="@font/mark_pro_medium"
-                android:text="2"
+                android:text="@string/default_item_count"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -99,8 +99,8 @@
         android:layout_marginStart="16dp"
         android:contentDescription="@string/trash_icon"
         android:src="@drawable/ic_trash"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-        app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/cardView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/itemCountCardView"
+        app:layout_constraintStart_toEndOf="@+id/itemCountCardView"
+        app:layout_constraintTop_toTopOf="@+id/itemCountCardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

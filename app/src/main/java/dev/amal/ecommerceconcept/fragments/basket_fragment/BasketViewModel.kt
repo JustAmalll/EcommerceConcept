@@ -20,10 +20,10 @@ class BasketViewModel @Inject constructor(
     val stateFlow = _stateFlow.asStateFlow()
 
     init {
-        getItemDetails()
+        getBasket()
     }
 
-    private fun getItemDetails() {
+    private fun getBasket() {
         getBasketUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {

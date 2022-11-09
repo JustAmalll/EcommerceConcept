@@ -6,4 +6,3 @@ data class BasketInfo(
     val price: Int,
     val title: String
 )
-

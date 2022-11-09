@@ -1,5 +1,6 @@
 package dev.amal.ecommerceconcept.fragments.home_store_fragment
 
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
@@ -16,7 +17,9 @@ import dev.amal.ecommerceconcept.adapters.HotSalesViewPagerAdapter
 import dev.amal.ecommerceconcept.common.BaseFragment
 import dev.amal.ecommerceconcept.common.setLightSystemBars
 import dev.amal.ecommerceconcept.common.showProgressBarWhenLoading
+import dev.amal.ecommerceconcept.common.toggleTextColor
 import dev.amal.ecommerceconcept.databinding.FragmentHomeStoreBinding
+import dev.amal.ecommerceconcept.fragments.basket_fragment.BasketViewModel
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -26,32 +29,14 @@ class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
 ) {
 
     private lateinit var dialog: BottomSheetDialog
-    private val viewModel by viewModels<HomeStoreViewModel>()
-
-    override fun setupClickListener() = with(binding) {
-        filterIcon.setOnClickListener { showFilterBottomSheet() }
-        bagIcon.setOnClickListener {
-            findNavController().navigate(R.id.action_homeStoreFragment_to_basketFragment)
-        }
-        phonesLinearLayout.setOnClickListener {
-
-        }
-        computerLinearLayout.setOnClickListener {
-
-        }
-        healthLinearLayout.setOnClickListener {
-
-        }
-        booksLinearLayout.setOnClickListener {
-
-        }
-    }
+    private val homeStoreViewModel by viewModels<HomeStoreViewModel>()
+    private val basketViewModel by viewModels<BasketViewModel>()
 
     override fun onCreateView() {
         activity?.window?.setLightSystemBars(requireContext())
 
         lifecycleScope.launch {
-            viewModel.stateFlow.collectLatest {
+            homeStoreViewModel.stateFlow.collectLatest {
                 binding.hotSalesProgressBar.showProgressBarWhenLoading(it.isLoading)
                 binding.bestSellerProgressBar.showProgressBarWhenLoading(it.isLoading)
 
@@ -68,6 +53,54 @@ class HomeStoreFragment : BaseFragment<FragmentHomeStoreBinding>(
                             allItems.bestSeller, requireContext(), findNavController()
                         )
                     }
+                }
+            }
+        }
+        lifecycleScope.launch {
+            basketViewModel.stateFlow.collectLatest { basketState ->
+
+                if (basketState.isLoading)
+                    binding.cardItemCountCardView.visibility = View.INVISIBLE
+                else binding.cardItemCountCardView.visibility = View.VISIBLE
+
+                basketState.basket?.basket?.let { basket ->
+                    if (basket.isNotEmpty()) {
+                        binding.cardItemCountCardView.visibility = View.VISIBLE
+                        binding.cartItemCountTextView.text = basket.size.toString()
+                    } else binding.cardItemCountCardView.visibility = View.INVISIBLE
+                }
+            }
+        }
+    }
+
+    override fun setupClickListener() = with(binding) {
+        filterIcon.setOnClickListener { showFilterBottomSheet() }
+        cardView.setOnClickListener {}
+        bagIcon.setOnClickListener {
+            findNavController().navigate(R.id.action_homeStoreFragment_to_basketFragment)
+        }
+        toggleButtonGroup.selectButton(R.id.phoneButton)
+        toggleButtonGroup.setOnSelectListener { button ->
+            when (button.selectedText) {
+                "phoneButton" -> {
+                    phoneTV.toggleTextColor(
+                        requireContext(), phoneTV, computerTV, healthTV, booksTV
+                    )
+                }
+                "computerButton" -> {
+                    computerTV.toggleTextColor(
+                        requireContext(), phoneTV, computerTV, healthTV, booksTV
+                    )
+                }
+                "healthButton" -> {
+                    healthTV.toggleTextColor(
+                        requireContext(), phoneTV, computerTV, healthTV, booksTV
+                    )
+                }
+                "booksButton" -> {
+                    booksTV.toggleTextColor(
+                        requireContext(), phoneTV, computerTV, healthTV, booksTV
+                    )
                 }
             }
         }

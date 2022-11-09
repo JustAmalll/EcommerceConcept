@@ -53,6 +53,10 @@
     <string name="minus_icon">Minus Icon</string>
     <string name="select_color_and_capacity">Select color and capacity</string>
     <string name="app_logo">App Logo</string>
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+    <string name="default_item_count">2</string>
 
     <string-array name="brands">
         <item>Samsung</item>

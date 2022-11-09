@@ -17,5 +17,7 @@
     <color name="tab_unselected_text_color">#80000000</color>
     <color name="small_divider_color">#33FFFFFF</color>
     <color name="big_divider_color">#40FFFFFF</color>
+    <color name="old_price_text_color">#CCCCCC</color>
+    <color name="item_count_card_view_color">#282843</color>
 
 </resources>

@@ -54,3 +54,17 @@ fun Window.setLightSystemBars(context: Context) {
     this.navigationBarColor = ContextCompat.getColor(context, R.color.surface)
     this.statusBarColor = ContextCompat.getColor(context, R.color.surface)
 }
+
+fun TextView.toggleTextColor(
+    context: Context,
+    phoneTextView: TextView,
+    computerTextView: TextView,
+    healthTextView: TextView,
+    booksTextView: TextView
+) {
+    if (this != booksTextView) booksTextView.setTextColor(context, R.color.black)
+    if (this != phoneTextView) phoneTextView.setTextColor(context, R.color.black)
+    if (this != computerTextView) computerTextView.setTextColor(context, R.color.black)
+    if (this != healthTextView) healthTextView.setTextColor(context, R.color.black)
+    this.setTextColor(context, R.color.primary)
+}

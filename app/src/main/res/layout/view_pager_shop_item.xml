@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shopItemContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/shopItemContainer"
     android:layout_marginTop="24dp"
     android:background="@color/white"
     android:gravity="center">
@@ -16,10 +17,10 @@
         android:drawablePadding="6dp"
         android:fontFamily="@font/mark_pro_normal"
         android:gravity="center"
-        android:text="Exynos 990"
         android:textColor="@color/text_gray"
         android:textSize="11sp"
-        app:drawableTopCompat="@drawable/ic_cpu" />
+        app:drawableTopCompat="@drawable/ic_cpu"
+        tools:text="Exynos 990" />
 
     <TextView
         android:id="@+id/cameraTextView"
@@ -29,10 +30,10 @@
         android:drawablePadding="8dp"
         android:fontFamily="@font/mark_pro_normal"
         android:gravity="center"
-        android:text="108 + 12 mp"
         android:textColor="@color/text_gray"
         android:textSize="11sp"
-        app:drawableTopCompat="@drawable/ic_camera" />
+        app:drawableTopCompat="@drawable/ic_camera"
+        tools:text="108 + 12 mp" />
 
     <TextView
         android:id="@+id/ramTextView"
@@ -41,10 +42,10 @@
         android:layout_weight="1"
         android:fontFamily="@font/mark_pro_normal"
         android:gravity="center"
-        android:text="8 GB"
         android:textColor="@color/text_gray"
         android:textSize="11sp"
-        app:drawableTopCompat="@drawable/ic_ram" />
+        app:drawableTopCompat="@drawable/ic_ram"
+        tools:text="8 GB" />
 
     <TextView
         android:id="@+id/storageTextView"
@@ -54,9 +55,9 @@
         android:drawablePadding="6dp"
         android:fontFamily="@font/mark_pro_normal"
         android:gravity="center"
-        android:text="256 GB"
         android:textColor="@color/text_gray"
         android:textSize="11sp"
-        app:drawableTopCompat="@drawable/ic_storage" />
+        app:drawableTopCompat="@drawable/ic_storage"
+        tools:text="256 GB" />
 
 </LinearLayout>

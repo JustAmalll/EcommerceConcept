@@ -64,7 +64,7 @@
             android:layout_marginStart="6dp"
             android:fontFamily="@font/mark_pro_medium"
             android:text="@string/best_seller_item_default_old_price"
-            android:textColor="#CCCCCC"
+            android:textColor="@color/old_price_text_color"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@+id/newPriceTextView"
             app:layout_constraintStart_toEndOf="@+id/newPriceTextView"

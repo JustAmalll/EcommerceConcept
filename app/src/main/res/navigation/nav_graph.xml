@@ -9,7 +9,7 @@
         android:id="@+id/homeStoreFragment"
         android:name="dev.amal.ecommerceconcept.fragments.home_store_fragment.HomeStoreFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_home_store" >
+        tools:layout="@layout/fragment_home_store">
         <action
             android:id="@+id/action_homeStoreFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
@@ -21,7 +21,7 @@
         android:id="@+id/productDetailsFragment"
         android:name="dev.amal.ecommerceconcept.fragments.details_fragment.ProductDetailsFragment"
         android:label="fragment_product_details"
-        tools:layout="@layout/fragment_product_details" >
+        tools:layout="@layout/fragment_product_details">
         <action
             android:id="@+id/action_productDetailsFragment_to_basketFragment"
             app:destination="@id/basketFragment" />
@@ -35,7 +35,7 @@
         android:id="@+id/splashFragment"
         android:name="dev.amal.ecommerceconcept.fragments.splash_screen.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_homeStoreFragment"
             app:destination="@id/homeStoreFragment" />

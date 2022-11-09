@@ -44,5 +44,4 @@ class BasketFragment : BaseFragment<FragmentBasketBinding>(
     override fun setupClickListener() = with(binding) {
         backCardView.setOnClickListener { findNavController().popBackStack() }
     }
-
 }
