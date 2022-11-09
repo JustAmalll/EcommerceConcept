@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeStoreFragment">
 
     <fragment
         android:id="@+id/homeStoreFragment"
@@ -31,14 +31,5 @@
         android:name="dev.amal.ecommerceconcept.fragments.basket_fragment.BasketFragment"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" />
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="dev.amal.ecommerceconcept.fragments.splash_screen.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash">
-        <action
-            android:id="@+id/action_splashFragment_to_homeStoreFragment"
-            app:destination="@id/homeStoreFragment" />
-    </fragment>
 
 </navigation>

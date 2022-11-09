@@ -137,6 +137,48 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star"
+                    android:contentDescription="@string/star_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/star_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/star_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/star_icon" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/star_icon" />
+
+            </LinearLayout>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
@@ -213,7 +255,7 @@
                     android:id="@+id/firstCapacityCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="56dp"
+                    android:layout_marginStart="44dp"
                     app:cardBackgroundColor="@color/primary"
                     app:cardCornerRadius="10dp">
 
@@ -234,7 +276,7 @@
                     android:id="@+id/secondCapacityCardView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="10dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="0dp">
@@ -273,7 +315,7 @@
                         android:fontFamily="@font/mark_pro_bold"
                         android:text="@string/add_to_cart"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="19sp" />
 
                     <TextView
                         android:id="@+id/priceTextView"
@@ -282,7 +324,7 @@
                         android:fontFamily="@font/mark_pro_bold"
                         android:gravity="end"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="19sp"
                         tools:text="$1,500.00" />
 
                 </LinearLayout>

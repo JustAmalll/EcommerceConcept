@@ -17,10 +17,10 @@ class HomeStoreViewModel @Inject constructor(
     val stateFlow = _stateFlow.asStateFlow()
 
     init {
-        getAllItems()
+        getAllProducts()
     }
 
-    private fun getAllItems() {
+    private fun getAllProducts() {
         getAllProductsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {

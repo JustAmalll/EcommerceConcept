@@ -57,6 +57,7 @@
     <string name="details">Details</string>
     <string name="features">Features</string>
     <string name="default_item_count">2</string>
+    <string name="star_icon">Star Icon</string>
 
     <string-array name="brands">
         <item>Samsung</item>

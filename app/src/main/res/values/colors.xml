@@ -8,12 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="ic_launcher_background">#010035</color>
+
     <color name="primary">#FF6E4E</color>
     <color name="secondary">#010035</color>
     <color name="surface">#F8F8F8</color>
 
     <color name="input_text_color">#80010035</color>
     <color name="text_gray">#B7B7B7</color>
+
     <color name="tab_unselected_text_color">#80000000</color>
     <color name="small_divider_color">#33FFFFFF</color>
     <color name="big_divider_color">#40FFFFFF</color>

@@ -17,10 +17,10 @@ class ProductDetailsViewModel @Inject constructor(
     val stateFlow = _stateFlow.asStateFlow()
 
     init {
-        getItemDetails()
+        getProductDetails()
     }
 
-    private fun getItemDetails() {
+    private fun getProductDetails() {
         getProductDetailsUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {
