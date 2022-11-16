@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "EcommerceConcept"
 include ':app'
+include ':core'
+include ':feature_product_details'
+include ':feature_home_store'
+include ':feature_basket'

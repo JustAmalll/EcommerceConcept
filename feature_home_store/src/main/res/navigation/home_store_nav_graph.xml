@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_store_nav_graph"
+    app:startDestination="@id/homeStoreFragment">
+
+    <fragment
+        android:id="@+id/homeStoreFragment"
+        android:name="dev.amal.feature_home_store.presentation.HomeStoreFragment"
+        android:label="fragment_home_store"
+        tools:layout="@layout/fragment_home_store">
+
+        <deepLink app:uri="android-app://dev.amal.ecommerceconcept/home_store_fragment" />
+    </fragment>
+
+</navigation>

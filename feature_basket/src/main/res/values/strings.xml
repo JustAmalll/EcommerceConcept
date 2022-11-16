@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">feature_basket</string>
+
+    <string name="add_address">Add address</string>
+    <string name="my_cart">My Cart</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="checkout">Checkout</string>
+    <string name="trash_icon">Trash Icon</string>
+    <string name="plus_icon">Plus Icon</string>
+    <string name="minus_icon">Minus Icon</string>
+    <string name="default_item_count">2</string>
+</resources>

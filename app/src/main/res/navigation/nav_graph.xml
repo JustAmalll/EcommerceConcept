@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeStoreFragment">
+    app:startDestination="@id/home_store_nav_graph">
 
-    <fragment
-        android:id="@+id/homeStoreFragment"
-        android:name="dev.amal.ecommerceconcept.fragments.home_store_fragment.HomeStoreFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_home_store">
-        <action
-            android:id="@+id/action_homeStoreFragment_to_productDetailsFragment"
-            app:destination="@id/productDetailsFragment" />
-        <action
-            android:id="@+id/action_homeStoreFragment_to_basketFragment"
-            app:destination="@id/basketFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/productDetailsFragment"
-        android:name="dev.amal.ecommerceconcept.fragments.details_fragment.ProductDetailsFragment"
-        android:label="fragment_product_details"
-        tools:layout="@layout/fragment_product_details">
-        <action
-            android:id="@+id/action_productDetailsFragment_to_basketFragment"
-            app:destination="@id/basketFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/basketFragment"
-        android:name="dev.amal.ecommerceconcept.fragments.basket_fragment.BasketFragment"
-        android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" />
+    <include app:graph="@navigation/home_store_nav_graph" />
+    <include app:graph="@navigation/product_details_nav_graph" />
+    <include app:graph="@navigation/basket_nav_graph" />
 
 </navigation>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">core</string>
+
+    <string name="arrow_left_icon">Arrow Left Icon</string>
+    <string name="bag_icon">Bag Icon</string>
+    <string name="heart_icon">Heart Icon</string>
+    <string name="star_icon">Star Icon</string>
+    <string name="location_icon">Location Icon</string>
+    <string name="phone_preview">Phone Preview</string>
+</resources>

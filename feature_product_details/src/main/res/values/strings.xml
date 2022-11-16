@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">feature_product_details</string>
+
+    <string name="product_details">Product Details</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+
+    <string name="add_to_cart">Add to Cart</string>
+
+    <string name="check_icon">Check Icon</string>
+</resources>
