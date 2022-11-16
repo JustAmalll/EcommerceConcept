@@ -1,2 +1,2 @@
 # EcommerceConcept
-Test task to Effective Mobile
+Test task for Effective Mobile
